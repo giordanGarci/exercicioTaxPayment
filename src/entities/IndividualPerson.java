@@ -23,8 +23,8 @@ public class IndividualPerson extends Person {
 	public double payTax() {
 		double taxMultiplier = (getAnnualIncome() < 20000.0) ? 0.15 : 0.25;
 		double deductTax = (healthExpenditures > 0) ? 0.5 : 0.0;
-		return getAnnualIncome() * taxMultiplier - (healthExpenditures * deductTax);
-
+		double tax = getAnnualIncome() * taxMultiplier - (healthExpenditures * deductTax);
+		return (tax > 0) ? tax : 0;
 	}
 
 }
