@@ -21,7 +21,7 @@ public class IndividualPerson extends Person {
 
 	@Override
 	public double payTax() {
-		double taxMultiplier = (getAnnualIncome() < 2000.0) ? 0.15 : 0.25;
+		double taxMultiplier = (getAnnualIncome() < 20000.0) ? 0.15 : 0.25;
 		double deductTax = (healthExpenditures > 0) ? 0.5 : 0.0;
 		return getAnnualIncome() * taxMultiplier - (healthExpenditures * deductTax);
 
